@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+=> Review: My Markdown Blog with Next.js 🚀
+
+I built a Markdown-powered blog using Next.js, Tailwind CSS, ShadCN UI, and Rehype for a clean, fast, and modern blogging experience.
+
+Next.js (App Router): Optimized for performance with SSR & SSG.
+
+Tailwind CSS: Simple, responsive, and utility-first styling.
+
+ShadCN UI: Beautiful, minimal UI components.
+
+Rehype: Enhanced Markdown parsing with custom styles & syntax highlighting.
+
+Reusable Components: Scalable, maintainable, and efficient design.
+
+💡 This stack made content management effortless while keeping the UI polished. Let me know what you think! 😊
