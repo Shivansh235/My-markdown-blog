@@ -118,11 +118,11 @@ import React,{useRef, useEffect} from 'react';
       </div>
 
       {/* Standard Plan - Bestseller */}
-      <div className="bg-blue-100 dark:bg-blue-900 border-4 border-blue-600 rounded-lg shadow-lg p-6 relative hover:scale-90 overflow-hidden transition-transform duration-300">
+      <div className="bg-white dark:bg-gray-800   dark:border-gray-700 rounded-lg shadow-lg p-6 hover:scale-90 transition-transform duration-300 border-3 border-blue-600">
         {/* Bestseller Badge */}
-        <span className="absolute top-4 left-4 px-3 py-1 text-sm font-semibold text-white bg-blue-600 rounded-full">
-          Bestseller
-        </span>
+   
+
+
         <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">
           Standard Plan
         </h3>
@@ -188,7 +188,7 @@ import React,{useRef, useEffect} from 'react';
         <p className="text-lg  mb-6 animate__animated animate__fadeIn animate__delay-2s">
           Unlock the power of modern solutions designed to elevate your business to the next level. Let us get started!
         </p>
-        <a href="#contact" className="inline-block text-white bg-blue-600  px-8 py-3 rounded-lg shadow-md transform   transition-all duration-300 hover:scale-105 hover:bg-blue-700 animate__animated animate__fadeIn animate__delay-3s">
+        <a href="#contact" className="inline-block text-white bg-blue-600  px-8 py-3 rounded-lg shadow-md transform   transition-all duration-300 hover:scale-105 hover:bg-blue-700 animate__animated animate__fadeIn animate__delay-3s ">
           Get Started
         </a>
       </div>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
+
 export default function ContactUs() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -20,11 +21,12 @@ export default function ContactUs() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setTimeout(() => setSubmitted(false), 4000);
+    setFormData(" ")
   };
 
   return (
-    <div className={`h-screen flex items-center justify-center p-6 transition-colors ${darkMode ? 'bg-gray-900' : 'bg-gray-200'}`}>
+    <div className={`h-screen flex items-center justify-center p-6  transition-colors ${darkMode ? 'bg-gray-900' : 'bg-gray-200'}`}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
