@@ -209,21 +209,21 @@ import React,{useRef, useEffect} from 'react';
       <div className="bg-white dark:bg-gray-800  p-4 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
         <img src="/Typescript.webp" alt="Blog Title 1" className="w-full h-56 object-cover rounded-t-lg" />
         <h3 className="text-xl font-semibold mt-3 text-gray-800 dark:text-white truncate">Smart Blog Title 1 with Long Name</h3>
-        <p className="text-gray-600 darK:text-gray-200 text-sm mt-2">A brief description of Typescript Explore insights and tips on growing your Knowledge about typescript.</p>
+        <p className="text-gray-400 darK:text-gray-200 text-sm mt-2">A brief description of Typescript Explore insights and tips on growing your Knowledge about typescript.</p>
         <a href="link-to-blog1.html" className="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 text-sm">Read More</a>
       </div>
       {/* Blog Card 2 */}
       <div className="bg-white dark:bg-gray-800  p-4 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
         <img src="/Next.webp" alt="Blog Title 2" className="w-full h-56 object-cover rounded-t-lg" />
         <h3 className="text-xl font-semibold mt-3 text-gray-800 dark:text-white truncate">Engaging and Smart Blog Post</h3>
-        <p className="text-gray-600 darK:text-gray-200 text-sm mt-2">A brief description of Nextjs Discover creative ways to boost engagement with your audience.</p>
+        <p className="text-gray-400 darK:text-gray-200 text-sm mt-2">A brief description of Nextjs Discover creative ways to boost engagement with your audience.</p>
         <a href="link-to-blog2.html" className="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 text-sm">Read More</a>
       </div>
       {/* Blog Card 3 */}
       <div className="bg-white dark:bg-gray-800  p-4 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
         <img src="/React.webp" alt="Blog Title 3" className="w-full h-56 object-cover rounded-t-lg" />
         <h3 className="text-xl font-semibold mt-3 text-gray-800 dark:text-white truncate">How to Stay Updated with the Latest Trends</h3>
-        <p className="text-gray-600 darK:text-gray-200 text-sm mt-2">A brief description of Reactjs Learn how to keep up with the ever-changing blogosphere related to react.</p>
+        <p className="text-gray-400 darK:text-gray-200 text-sm mt-2">A brief description of Reactjs Learn how to keep up with the ever-changing blogosphere related to react.</p>
         <a href="link-to-blog3.html" className="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 text-sm">Read More</a>
       </div>
     </div>
