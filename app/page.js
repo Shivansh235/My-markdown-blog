@@ -72,7 +72,7 @@ import React,{useRef, useEffect} from 'react';
             </div>
             <div className="w-full mt-4 lg:mt-0 lg:w-1/2">
               <img
-                src="https://www.creative-tim.com/twcomponents/svg/website-designer-bro-purple.svg"
+                src="/html.svg"
                 alt="tailwind css components"
                 className="w-full h-full max-w-md mx-auto"
               />
