@@ -10,10 +10,16 @@ import { unified } from "unified";
 import rehypePrettyCode from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 
-const postsDirectory = "content"; // Folder containing Markdown files
+const postsDirectory = path.join(process.cwd(), "content"); // Absolute path
 
 export async function generateStaticParams() {
+  if (!fs.existsSync(postsDirectory)) {
+    console.warn("Content directory not found!");
+    return [];
+  }
+
   const files = fs.readdirSync(postsDirectory);
+  console.log("Generating static params for:", files);
   return files.map((file) => ({
     slug: file.replace(".md", ""),
   }));
@@ -23,8 +29,7 @@ export default async function Page({ params }) {
   const filepath = path.join(postsDirectory, `${params.slug}.md`);
 
   if (!fs.existsSync(filepath)) {
-    notFound();
-    return;
+    return notFound();
   }
 
   const fileContent = fs.readFileSync(filepath, "utf-8");
@@ -73,4 +78,3 @@ export default async function Page({ params }) {
     </div>
   );
 }
-
