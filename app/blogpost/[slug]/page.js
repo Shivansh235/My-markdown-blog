@@ -1,6 +1,5 @@
-
-
 import fs from "fs";
+import path from "path";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import rehypeFormat from "rehype-format";
@@ -9,10 +8,19 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import rehypePrettyCode from "rehype-pretty-code";
-import { transformerCopyButton } from '@rehype-pretty/transformers'
+import { transformerCopyButton } from "@rehype-pretty/transformers";
+
+const postsDirectory = "content"; // Folder containing Markdown files
+
+export async function generateStaticParams() {
+  const files = fs.readdirSync(postsDirectory);
+  return files.map((file) => ({
+    slug: file.replace(".md", ""),
+  }));
+}
 
 export default async function Page({ params }) {
-  const filepath = `content/${params.slug}.md`;
+  const filepath = path.join(postsDirectory, `${params.slug}.md`);
 
   if (!fs.existsSync(filepath)) {
     notFound();
@@ -26,17 +34,17 @@ export default async function Page({ params }) {
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypeFormat)
-
-    .use(rehypePrettyCode, { theme: "github-dark",
+    .use(rehypePrettyCode, {
+      theme: "github-dark",
       transformers: [
         transformerCopyButton({
-          visibility: 'always',
-          feedbackDuration: 3_000,
+          visibility: "always",
+          feedbackDuration: 3000,
         }),
       ],
-
-     }) // Keep this chained properly
+    })
     .use(rehypeStringify);
+
   const htmlcontent = (await processor.process(content)).toString();
 
   return (
@@ -60,9 +68,8 @@ export default async function Page({ params }) {
       {/* Blog Content with Bold Headings in Dark Mode */}
       <div
         dangerouslySetInnerHTML={{ __html: htmlcontent }}
-        className="prose dark:prose-invert" // prose class is used when u use tailwind typography!
+        className="prose dark:prose-invert"
       ></div>
-
     </div>
   );
 }
