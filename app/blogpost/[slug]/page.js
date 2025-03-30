@@ -28,9 +28,6 @@ export async function generateStaticParams() {
 export default async function Page({ params }) {
   const filepath = path.join(postsDirectory, `${params.slug}.md`);
 
-  if (!fs.existsSync(filepath)) {
-    return notFound();
-  }
 
   const fileContent = fs.readFileSync(filepath, "utf-8");
   const { data, content } = matter(fileContent);
