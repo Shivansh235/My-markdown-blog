@@ -1,4 +1,6 @@
 {
-    "includeFiles": ["content/**"]
-  }
+  "version": 2,
+  "includeFiles": ["content/**"]
+}
+
   
