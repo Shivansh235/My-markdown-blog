@@ -10,13 +10,13 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import Head from "next/head";
 
+// Absolute path to the content folder
 const postsDirectory = path.join(process.cwd(), "content");
 
-// ✅ Server Component to Fetch Data
 export default async function BlogPost({ params }) {
   const { slug } = params;
-
   const filepath = path.join(postsDirectory, `${slug}.md`);
+
   if (!fs.existsSync(filepath)) {
     return <h1>404 - Post Not Found</h1>;
   }
@@ -49,7 +49,7 @@ export default async function BlogPost({ params }) {
         <meta property="og:title" content={data.title} />
         <meta property="og:description" content={data.description} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://myblog.com/blog/${data.slug}`} />
+        <meta property="og:url" content={`https://myblog.com/blogpost/${data.slug}`} />
         <meta property="og:image" content={data.image || '/default-image.jpg'} />
       </Head>
 
@@ -70,3 +70,4 @@ export default async function BlogPost({ params }) {
     </div>
   );
 }
+
