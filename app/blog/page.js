@@ -8,19 +8,25 @@ const getBlogs = async () => {
   const contentDir = path.join(process.cwd(), "content");
 
   if (!fs.existsSync(contentDir)) {
+    console.warn("Content directory is missing.");
     return []; // Return an empty array if directory is missing
   }
 
   const dirContent = fs.readdirSync(contentDir, "utf-8");
   const blogs = dirContent.map((file) => {
-    const fileContent = fs.readFileSync(path.join(contentDir, file), "utf-8");
-    const { data } = matter(fileContent);
+    try {
+      const fileContent = fs.readFileSync(path.join(contentDir, file), "utf-8");
+      const { data } = matter(fileContent);
 
-    return {
-      ...data,
-      slug: data.slug || file.replace(".md", ""), // Ensure slug exists
-    };
-  });
+      return {
+        ...data,
+        slug: data.slug || file.replace(".md", ""), // Ensure slug exists
+      };
+    } catch (error) {
+      console.error(`Error reading file ${file}:`, error);
+      return null; // Return null for any unreadable files
+    }
+  }).filter(Boolean); // Filter out any null values
 
   return blogs;
 };
